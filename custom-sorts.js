@@ -26,8 +26,15 @@ function validAnagrams(s, t) {
 }
 
 function reverseBaseSort(arr) {
-
+  arr.sort((a,b)=> {
+    let logA = Math.log10(a)
+    let logB = Math.log10(b)
+    if(Math.floor(Math.log10(a))===Math.floor(Math.log10(b))) return logA-logB
+    return logB-logA
+  })
+  return arr
 }
+
 
 function frequencySort(arr) {
   let counts = {}
