@@ -1,12 +1,21 @@
 
 
 function ageSort(users) {
-  // Fill this in
+
+  users.sort((a,b)=>{
+    console.log(a.id,b.id)
+    return a.age - b.age
+  })
+  return users
 }
 
 
 function oddEvenSort(arr) {
-  // Fill this in
+  let evens = arr.filter(x=> x%2===0)
+  let odds = arr.filter(x=> x%2!==0)
+  evens.sort()
+  odds.sort()
+  
 }
 
 function validAnagrams(s, t) {
