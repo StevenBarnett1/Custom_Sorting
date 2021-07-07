@@ -35,12 +35,7 @@ function frequencySort(arr) {
     if(!counts[num])counts[num] = 1
     else counts[num]++
   }
-  arr.sort((a,b)=>{
-    if(counts[a.toString()]-counts[b.toString()]===0){
-      return a-b
-    } else return counts[a.toString()]-counts[b.toString()]
-  })
-  console.log(counts)
+  arr.sort((a,b)=> counts[a] === counts[b] ? b-a : counts[a] - counts[b])
   return arr
 }
 
