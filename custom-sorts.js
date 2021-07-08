@@ -2,21 +2,22 @@
 
 function ageSort(users) {
 
-  users.sort((a,b)=>{
-
-    return a.age - b.age
-  })
+  users.sort((a,b)=>a.age - b.age)
   return users
 }
 
 
 function oddEvenSort(arr) {
-  let evens = arr.filter(x=> x%2===0)
-  let odds = arr.filter(x=> x%2!==0)
-  evens.sort((a,b)=>a-b)
-  odds.sort((a,b)=>a-b)
-  return[...odds,...evens]
-
+  arr.sort((a,b)=> {
+    if(a%2 !==0 && b%2 === 0){
+      return -1
+    }
+    else if(a%2===0 && b%2 !== 0){
+      return 1
+    }
+    else return a-b
+  })
+  return arr
 }
 
 function validAnagrams(s, t) {
